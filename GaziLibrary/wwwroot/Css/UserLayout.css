@@ -1,0 +1,34 @@
+﻿/**** Navigation *****/
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: -3px;
+    width: 0%;
+    background-color: #ffffff;
+    height: 2px;
+    transition: 1300ms all;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/**** Footer *****/
+
+footer i {
+    transition: all 500ms;
+}
+
+footer i:hover {
+    font-size: 125%;
+}

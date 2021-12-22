@@ -1,0 +1,50 @@
+﻿@model UserModel
+
+@{
+    Layout = "_UserLayout";
+}
+
+<h1 class="py-3 text-center">PROFİL BİLGİLERİ</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="EditProfil" asp-controller="User" method="post">
+        <div class="mb-3 form-group">
+            <label asp-for="User.FirstName" class="form-label">İsim</label>
+            <input type="text" class="form-control" asp-for="User.FirstName">
+            <span class="form-text text-danger" asp-validation-for="User.FirstName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.LastName" class="form-label">Soyisim</label>
+            <input type="text" class="form-control" asp-for="User.LastName">
+            <span class="form-text text-danger" asp-validation-for="User.LastName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.Email" class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="User.Email">
+            <span class="form-text text-danger" asp-validation-for="User.Email"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.Password" class="form-label">Şifre</label>
+            <input type="text" class="form-control" asp-for="User.Password">
+            <span class="form-text text-danger" asp-validation-for="User.Password"></span>
+        </div>
+        <input type="hidden" asp-for="User.Id" />
+        <input type="hidden" asp-for="User.PositionId" />
+        <input type="hidden" asp-for="User.UserName" />
+        <div class="text-center"><button type="submit" class="btn btn-warning">Güncelle</button></div>
+    </form>
+</div>
+@{
+    if (Model.BorrowedBook != null)
+    {
+        <div class="p-3 col-lg-3 mb-3 col-md-4 col-sm-6 mx-auto">
+            <div class="card text-center shadow">
+                <img src="~/image/@Model.BorrowedBook.Book.Image" class="card-img-top" style="object-fit: cover; width:100%; height:15vw;" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.BorrowedBook.Book.Name</h5>
+                    <p class="card-text">@Model.BorrowedBook.BorrowDate</p>
+                    <a href="/User/ReturnBack/@Model.BorrowedBook.BookId" class="btn btn-primary">Geri Ver</a>
+                </div>
+            </div>
+        </div>
+    }
+}

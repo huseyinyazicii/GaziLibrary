@@ -1,0 +1,36 @@
+﻿@model UserModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">KULLANICILAR</h1>
+<div class="mx-5">
+    <a href="/Admin/AddUser" class="btn btn-success my-4 float-end">Yeni Kullanıcı Ekle</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ADI</th>
+                <th>SOYADI</th>
+                <th>KULLANICI ADI</th>
+                <th>POZİSYON</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.FirstName</td>
+                    <td>@user.LastName</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Position.Name</td>
+                    <td><a href="/Admin/UpdateUser/@user.Id" class="btn btn-warning btn-sm">Düzenle</a></td>
+                    <td><a href="/Admin/DeleteUser/@user.Id" class="btn btn-danger btn-sm">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

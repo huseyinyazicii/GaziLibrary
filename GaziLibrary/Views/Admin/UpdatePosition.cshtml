@@ -1,0 +1,19 @@
+﻿@model PositionModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">POZİSYON GÜNCELLE</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="UpdatePosition" asp-controller="Admin" method="post">
+        <div class="mb-3 form-group">
+            <label asp-for="Position.Name" class="form-label">Pozisyon İsmi</label>
+            <input type="text" class="form-control" asp-for="Position.Name">
+            <span class="form-text text-danger" asp-validation-for="Position.Name"></span>
+        </div>
+        <input type="hidden" asp-for="Position.Id" />
+        <input type="hidden" asp-for="Position.Status" />
+        <div class="text-center"><button type="submit" class="btn btn-warning">Güncelle</button></div>
+    </form>
+</div>

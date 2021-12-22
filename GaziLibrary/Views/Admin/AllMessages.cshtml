@@ -1,0 +1,32 @@
+﻿@model MessageModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="mb-5 py-3 text-white" style="background-color: #3a393f ">OKUNMUŞ MESAJLAR</h1>
+<div class="mx-5">
+    <a href="/Admin/Messages" class="btn btn-success my-4 float-end">Okunmamış Mesajlar</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>KULLANICI ADI</th>
+                <th>MESAJ</th>
+                <th>TARİH</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var message in Model.Messages)
+            {
+                <tr>
+                    <td>@message.User.UserName</td>
+                    <td>@message.Text</td>
+                    <td>@message.Date</td>
+                    <td><a href="/Admin/DeletedMessage/@message.Id" class="btn btn-sm btn-danger">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

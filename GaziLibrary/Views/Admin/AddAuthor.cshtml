@@ -1,0 +1,22 @@
+﻿@model AuthorModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">YAZAR EKLE</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="AddAuthor" asp-controller="Admin" method="post">
+        <div class="mb-3 form-group">
+            <label asp-for="Author.FirstName" class="form-label">Yazar Adı</label>
+            <input type="text" class="form-control" asp-for="Author.FirstName">
+            <span class="form-text text-danger" asp-validation-for="Author.FirstName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="Author.LastName" class="form-label">Yazar Soyadı</label>
+            <input type="text" class="form-control" asp-for="Author.LastName">
+            <span class="form-text text-danger" asp-validation-for="Author.LastName"></span>
+        </div>
+        <div class="text-center"><button type="submit" class="btn btn-primary">Ekle</button></div>
+    </form>
+</div>

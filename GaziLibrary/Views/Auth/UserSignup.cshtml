@@ -1,0 +1,47 @@
+﻿@model UserModel
+
+@{
+    Layout = "_MainLayout";
+}
+
+<link href="~/Css/login.css" rel="stylesheet" />
+
+<div class="center">
+    <h1>Üye Ol</h1>
+    <form method="post" asp-action="UserSignup" asp-controller="Auth">
+        <div class="txt_field">
+            <input asp-for="User.FirstName" type="text" required>
+            <span></span>
+            <label asp-for="User.FirstName">Ad</label>
+            <span class="form-text text-danger" asp-validation-for="User.FirstName"></span>
+        </div>
+        <div class="txt_field">
+            <input asp-for="User.LastName" type="text" required>
+            <span></span>
+            <label asp-for="User.LastName">Soyad</label>
+            <span class="form-text text-danger" asp-validation-for="User.LastName"></span>
+        </div>
+        <div class="txt_field">
+            <input asp-for="User.UserName" type="text" required>
+            <span></span>
+            <label asp-for="User.UserName">Kullanıcı Adı</label>
+            <span class="form-text text-danger" asp-validation-for="User.UserName"></span>
+        </div>
+        <div class="txt_field">
+            <input asp-for="User.Password" type="password" required>
+            <span></span>
+            <label asp-for="User.Password">Şifre</label>
+            <span class="form-text text-danger" asp-validation-for="User.Password"></span>
+        </div>
+        <div class="txt_field">
+            <input asp-for="User.Email" type="text" required>
+            <span></span>
+            <label asp-for="User.Email">Email</label>
+            <span class="form-text text-danger" asp-validation-for="User.Email"></span>
+        </div>
+        <input type="submit" value="Üye Ol">
+        <div class="text-center">
+            <a href="/Auth/Login" class="btn1">Giriş</a>
+        </div>
+    </form>
+</div>

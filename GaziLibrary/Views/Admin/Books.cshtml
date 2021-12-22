@@ -1,0 +1,36 @@
+﻿@model BookModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">KİTAPLAR</h1>
+<div class="mx-5">
+    <a href="/Admin/AddBook" class="btn btn-success my-4 float-end" >Yeni Kitap Ekle</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ADI</th>
+                <th>YAZAR</th>
+                <th>TÜRÜ</th>
+                <th>SAYFA SAYISI</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Name</td>
+                    <td>@book.Author.FirstName @book.Author.LastName</td>
+                    <td>@book.Type.Name</td>
+                    <td>@book.NumberOfPage</td>
+                    <td><a href="/Admin/UpdateBook/@book.Id" class="btn btn-warning btn-sm">Düzenle</a></td>
+                    <td><a href="/Admin/DeleteBook/@book.Id" class="btn btn-danger btn-sm">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,60 @@
+﻿@model StatisticModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="mb-5 py-3 text-white" style="background-color: #3a393f ">İSTATİSTİKLER</h1>
+<div class="mx-5">
+    <div class="row text-white">
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #EF5350 ">
+                <div class="text-center h3 p-3">Kitap Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfBooks</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #BA68C8">
+                <div class="text-center h3 p-3">Alınan Kitap Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfBorrowedBooks</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #EC407A">
+                <div class="text-center h3 p-3">Yazar Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfAuthors</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #7E57C2 ">
+                <div class="text-center h3 p-3">Kullanıcı Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfUsers</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #5C6BC0 ">
+                <div class="text-center h3 p-3">Kitap Türü Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfTypes</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #42A5F5 ">
+                <div class="text-center h3 p-3">Mesaj Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfMessages</div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div style="background-color: #26A69A">
+                <div class="text-center h3 p-3">Kullanıcı Pozisyon Sayısı</div>
+                <hr />
+                <div class="text-center display-2 p-3">@Model.NumberOfPositions</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model UserModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">KULLANICI GÜNCELLE</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="UpdateUser" asp-controller="Admin" method="post">
+        <div class="mb-3 form-group">
+            <label asp-for="User.FirstName" class="form-label">İsim</label>
+            <input type="text" class="form-control" asp-for="User.FirstName" readonly>
+            <span class="form-text text-danger" asp-validation-for="User.FirstName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.LastName" class="form-label">Soyisim</label>
+            <input type="text" class="form-control" asp-for="User.LastName" readonly>
+            <span class="form-text text-danger" asp-validation-for="User.LastName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.UserName" class="form-label">Kullanıcı Adı</label>
+            <input type="text" class="form-control" asp-for="User.UserName" readonly>
+            <span class="form-text text-danger" asp-validation-for="User.UserName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.Email" class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="User.Email" readonly>
+            <span class="form-text text-danger" asp-validation-for="User.Email"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.PositionId" class="form-label">Pozisyon</label>
+            <select asp-for="User.PositionId" class="form-control" asp-items="@(new SelectList(Model.Positions,"Id","Name"))"></select>
+            <span class="form-text text-danger" asp-validation-for="User.PositionId"></span>
+        </div>
+        <input type="hidden" asp-for="User.Id" />
+        <input type="hidden" asp-for="User.Status" />
+        <input type="hidden" asp-for="User.Password" />
+        <div class="text-center"><button type="submit" class="btn btn-warning">Güncelle</button></div>
+    </form>
+</div>

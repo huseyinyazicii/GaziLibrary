@@ -1,0 +1,32 @@
+﻿@model BookModel
+
+@{
+    Layout = "_UserLayout";
+}
+
+<div class="col-md-6 text-center m-auto">
+    <form asp-action="Books" asp-controller="User">
+        <div class="py-3 form-group">
+            <input type="text" class="form-control" name="searchString">
+        </div>
+        <div class="text-center"><button type="submit" class="btn btn-success">Ara</button></div>
+    </form>
+</div>
+
+<div class="row m-0 mt-3">
+    @foreach (var book in Model.Books)
+    {
+        <div class="p-2 col-lg-3 mb-3 col-md-4 col-sm-6">
+        <div class="card text-center shadow">
+            <img src="~/image/@book.Image" class="card-img-top" style="object-fit: cover; width:100%; height:15vw;" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@book.Name</h5>
+                <p class="card-text">@book.Author.FirstName @book.Author.LastName</p>
+                <p class="card-text">@book.NumberOfPage</p>
+                <p class="card-text">@book.Type.Name</p>
+                <a href="/User/BorrowBook/@book.Id" class="btn btn-primary">Ödünç Al</a>
+            </div>
+        </div>
+        </div>
+    }
+</div>

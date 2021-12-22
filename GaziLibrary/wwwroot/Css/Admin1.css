@@ -1,0 +1,14 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.wrapper-admin {
+    margin-left: 260px;
+}
+
+.section-admin {
+    min-height: 100vh;
+    text-align: center;
+}

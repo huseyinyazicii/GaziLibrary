@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/font-awesome/css/all.min.css" rel="stylesheet" />
+    <link href="~/Css/main.css" rel="stylesheet" />
+</head>
+<body>
+    @RenderBody()
+    <script src="~/twitter-bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/jquery/jquery.min.js"></script>
+    @await Component.InvokeAsync("Notyf") 
+</body>
+</html>

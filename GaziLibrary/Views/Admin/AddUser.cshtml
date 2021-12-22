@@ -1,0 +1,42 @@
+﻿@model UserModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">KULLANICI EKLE</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="AddUser" asp-controller="Admin" method="post">
+        <div class="mb-3 form-group">
+            <label asp-for="User.FirstName" class="form-label">İsim</label>
+            <input type="text" class="form-control" asp-for="User.FirstName">
+            <span class="form-text text-danger" asp-validation-for="User.FirstName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.LastName" class="form-label">Soyisim</label>
+            <input type="text" class="form-control" asp-for="User.LastName">
+            <span class="form-text text-danger" asp-validation-for="User.LastName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.UserName" class="form-label">Kullanıcı Adı</label>
+            <input type="text" class="form-control" asp-for="User.UserName">
+            <span class="form-text text-danger" asp-validation-for="User.UserName"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.Password" class="form-label">Şifre</label>
+            <input type="password" class="form-control" asp-for="User.Password">
+            <span class="form-text text-danger" asp-validation-for="User.Password"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.Email" class="form-label">Email</label>
+            <input type="email" class="form-control" asp-for="User.Email">
+            <span class="form-text text-danger" asp-validation-for="User.Email"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="User.PositionId" class="form-label">Pozisyon</label>
+            <select asp-for="User.PositionId" class="form-control" asp-items="@(new SelectList(Model.Positions,"Id","Name"))"></select>
+            <span class="form-text text-danger" asp-validation-for="User.PositionId"></span>
+        </div>
+        <div class="text-center"><button type="submit" class="btn btn-primary">Ekle</button></div>
+    </form>
+</div>

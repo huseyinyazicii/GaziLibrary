@@ -1,0 +1,34 @@
+﻿@model BorrowedBookModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">ÖNCEDEN ALINMIŞ KİTAPLAR</h1>
+<div class="mx-5">
+    <a href="/Admin/BorrowedBooks" class="btn btn-success my-4 float-end">Ödünç Alınan Kitaplar</a>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>KULLANICI ADI</th>
+                <th>ALINAN KİTAP</th>
+                <th>ALINMA TARİHİ</th>
+                <th>GERİ İADE TARİHİ</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var borrowedBook in Model.BorrowedBooks)
+            {
+                <tr>
+                    <td>@borrowedBook.User.UserName</td>
+                    <td>@borrowedBook.Book.Name</td>
+                    <td>@borrowedBook.BorrowDate</td>
+                    <td>@borrowedBook.ReturnDate</td>
+                    <td><a href="/Admin/DeleteBorrowedBook/@borrowedBook.Id" class="btn btn-danger btn-sm">Sil</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

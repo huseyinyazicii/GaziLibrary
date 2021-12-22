@@ -1,0 +1,37 @@
+﻿@model BookModel
+
+@{
+    Layout = "_AdminLayout";
+}
+
+<h1 class="py-3 text-white" style="background-color: #3a393f ">KİTAP EKLE</h1>
+<div class="mx-5 mt-4">
+    <form asp-action="AddBook" asp-controller="Admin" method="post" enctype="multipart/form-data">
+        <div class="mb-3 form-group">
+            <label asp-for="ImageBook.Name" class="form-label">Kitap İsmi</label>
+            <input type="text" class="form-control" asp-for="ImageBook.Name">
+            <span class="form-text text-danger" asp-validation-for="ImageBook.Name"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="ImageBook.NumberOfPage" class="form-label">Sayfa Sayısı</label>
+            <input type="number" class="form-control" asp-for="ImageBook.NumberOfPage">
+            <span class="form-text text-danger" asp-validation-for="ImageBook.NumberOfPage"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="ImageBook.AuthorId" class="form-label">Yazar Adı</label>
+            <select asp-for="ImageBook.AuthorId" class="form-control" asp-items="@(new SelectList(Model.Authors,"Id","FullName"))"></select>
+            <span class="form-text text-danger" asp-validation-for="ImageBook.AuthorId"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="ImageBook.TypeId" class="form-label">Türü</label>
+            <select asp-for="ImageBook.TypeId" class="form-control" asp-items="@(new SelectList(Model.Types,"Id","Name"))"></select>
+            <span class="form-text text-danger" asp-validation-for="ImageBook.TypeId"></span>
+        </div>
+        <div class="mb-3 form-group">
+            <label asp-for="ImageBook.Image" class="form-label">Kitap Resmi</label>
+            <input type="file" class="form-control" asp-for="ImageBook.Image">
+            <span class="form-text text-danger" asp-validation-for="ImageBook.Image"></span>
+        </div>
+        <div class="text-center"><button type="submit" class="btn btn-primary">Ekle</button></div>
+    </form>
+</div>

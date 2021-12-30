@@ -477,6 +477,10 @@ namespace GaziLibrary.Controllers
             {
                 return RedirectToAction("Books", "User");
             }
+            if (!CheckStaff())
+            {
+                return RedirectToAction("Books", "Admin");
+            }
             var positions = _positionService.GetAllByStatus().Data;
             var positionWithUsers = new List<PositionWithUser>();
             foreach (var position in positions)
@@ -570,6 +574,10 @@ namespace GaziLibrary.Controllers
             {
                 return RedirectToAction("Books", "User");
             }
+            if (!CheckStaff())
+            {
+                return RedirectToAction("Books", "Admin");
+            }
             var model = new StatisticModel
             {
                 NumberOfAuthors = _authorService.GetAllByStatus().Data.Count,
@@ -589,6 +597,10 @@ namespace GaziLibrary.Controllers
             if (!CheckUser())
             {
                 return RedirectToAction("Books", "User");
+            }
+            if (!CheckStaff())
+            {
+                return RedirectToAction("Books", "Admin");
             }
             var model = new UserModel
             {
@@ -664,6 +676,15 @@ namespace GaziLibrary.Controllers
         private bool CheckUser()
         {
             if(HttpContext.Session.GetString("position") == "KULLANICI")
+            {
+                return false;
+            }
+            return true;
+        }
+        // Check Staff
+        private bool CheckStaff()
+        {
+            if (HttpContext.Session.GetString("position") == "PERSONEL")
             {
                 return false;
             }

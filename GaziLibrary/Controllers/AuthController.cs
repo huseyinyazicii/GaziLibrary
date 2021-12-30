@@ -79,6 +79,14 @@ namespace GaziLibrary.Controllers
         {
             user.Status = true;
             user.PositionId = _positionService.GetByName("KULLANICI").Data.Id;
+            if (!ModelState.IsValid)
+            {
+                var model = new UserModel
+                {
+                    User = user
+                };
+                return View(model);
+            }
             var result = _userService.Add(user);
             if(!result.Success)
             {

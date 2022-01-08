@@ -13,7 +13,7 @@ namespace GaziLibrary.Validations
         {
             RuleFor(m => m.Text).NotEmpty().WithMessage("Mesaj kısmı boş bırakılamaz.");
             RuleFor(m => m.Text).MinimumLength(30).WithMessage("Mesaj kısmı en az 30 karakter içermelidir.");
-            RuleFor(m => m.Text).MaximumLength(50).WithMessage("Mesaj kısmı en az 30 karakter içermelidir.");
+            RuleFor(m => m.Text).MaximumLength(500).WithMessage("En fazla 500 karakter girebilirsiniz.");
         }
     }
 }

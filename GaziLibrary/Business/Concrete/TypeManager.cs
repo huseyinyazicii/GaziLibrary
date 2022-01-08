@@ -26,7 +26,7 @@ namespace GaziLibrary.Business.Concrete
 
         public IDataResult<List<Entities.Concrete.Type>> GetAllByStatus()
         {
-            return new SuccessDataResult<List<Entities.Concrete.Type>>(_typeDal.GetAll(t => t.Status == true));
+            return new SuccessDataResult<List<Entities.Concrete.Type>>(_typeDal.GetAll(t => t.Status == true).OrderBy(t => t.Id).ToList());
         }
 
         public IDataResult<Entities.Concrete.Type> GetById(int id)

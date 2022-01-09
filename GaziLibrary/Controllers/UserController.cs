@@ -61,6 +61,7 @@ namespace GaziLibrary.Controllers
             var borrowedBook = new BorrowedBook
             {
                 BorrowDate = DateTime.Parse(DateTime.Now.ToShortDateString()),
+                ReturnDate = DateTime.Parse(DateTime.Now.AddDays(15).ToShortDateString()),
                 Status = true,
                 BookId = id,
                 UserId = Convert.ToInt32(HttpContext.Session.GetString("id"))

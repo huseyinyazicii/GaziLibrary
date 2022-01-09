@@ -24,8 +24,8 @@
                 <tr>
                     <td>@borrowedBook.User.UserName</td>
                     <td>@borrowedBook.Book.Name</td>
-                    <td>@borrowedBook.BorrowDate</td>
-                    <td>@borrowedBook.ReturnDate</td>
+                    <td>@borrowedBook.BorrowDate.GetDateTimeFormats()[0]</td>
+                    <td>@borrowedBook.ReturnDate.GetDateTimeFormats()[0]</td>
                     <td><a href="/Admin/RevokeBorrowedBook/@borrowedBook.Id" class="btn btn-danger btn-sm">Geri Al</a></td>
                 </tr>
             }

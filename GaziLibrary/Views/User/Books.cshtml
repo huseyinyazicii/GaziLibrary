@@ -16,17 +16,23 @@
 <div class="row m-0 mt-3">
     @foreach (var book in Model.Books)
     {
-        <div class="p-2 col-lg-3 mb-3 col-md-4 col-sm-6">
-        <div class="card text-center shadow">
-            <img src="~/image/@book.Image" class="card-img-top" style="object-fit: cover; width:100%; height:15vw;" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@book.Name</h5>
-                <p class="card-text">@book.Author.FirstName @book.Author.LastName</p>
-                <p class="card-text">@book.NumberOfPage</p>
-                <p class="card-text">@book.Type.Name</p>
-                <a href="/User/BorrowBook/@book.Id" class="btn btn-primary">Ödünç Al</a>
+        <div class="p-2 mb-3 col-lg-4 col-md-6">
+            <div class="card shadow">
+                <div class="row g-0">
+                    <div class="col-md-4 text-center">
+                        <img src="~/image/@book.Image" class="img-fluid rounded-start" style="object-fit: cover; height:100%;" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title" style="color: #3C096C">@book.Name</h5>
+                            <p class="card-text" style="color: #240046 ">@book.Author.FirstName @book.Author.LastName</p>
+                            <p class="card-text">@book.NumberOfPage</p>
+                            <p class="card-text text-muted">@book.Type.Name</p>
+                            <a href="/User/BorrowBook/@book.Id" class="btn btn-primary">Ödünç Al</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
         </div>
     }
 </div>

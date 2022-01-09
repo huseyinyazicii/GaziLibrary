@@ -23,7 +23,7 @@
                 <tr>
                     <td>@message.User.UserName</td>
                     <td>@message.Text</td>
-                    <td>@message.Date</td>
+                    <td>@message.Date.GetDateTimeFormats()[0]</td>
                     <td><a href="/Admin/DeleteMessage/@message.Id" class="btn btn-sm btn-danger">Okundu</a></td>
                 </tr>
             }

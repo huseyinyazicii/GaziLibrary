@@ -6,6 +6,9 @@ Database Management Systems Project
 - Oracle
 - C#
 - MVC
+- Bootstrap
+- EntityFramework
+- Html,Css,Js
 
 ## Database Tables
 

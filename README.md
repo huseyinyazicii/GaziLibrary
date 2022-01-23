@@ -13,7 +13,7 @@ Database Management Systems Project
 ## Project's Youtube Video
 
 <div>
-  <a href="https://www.youtube.com/watch?v=wTb0ECxaCz0"><img src="GaziLibrary/wwwroot/image/ReadmeImages/books.PNG" alt=""></a>
+  <a href="https://www.youtube.com/watch?v=wTb0ECxaCz0"><img src="GaziLibrary/wwwroot/image/ReadmeImages/ImageOfVideo.PNG" alt=""></a>
 </div>
 
 ## Database Tables

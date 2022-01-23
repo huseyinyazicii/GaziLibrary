@@ -10,30 +10,10 @@ Database Management Systems Project
 - EntityFramework
 - Html,Css,Js
 
-## Web UI
-
-### Books
+## Project's Youtube Video
 
 <div>
-  <img src="GaziLibrary/wwwroot/image/ReadmeImages/books.PNG" alt="">
-</div>
-
-### Edit Profil
-
-<div>
-  <img src="GaziLibrary/wwwroot/image/ReadmeImages/editprofil.PNG" alt="">
-</div>
-
-### Contact
-
-<div>
-  <img src="GaziLibrary/wwwroot/image/ReadmeImages/contact.PNG" alt="">
-</div>
-
-### Rules Of Library
-
-<div>
-  <img src="GaziLibrary/wwwroot/image/ReadmeImages/rules.PNG" alt="">
+  <a href="https://www.youtube.com/watch?v=wTb0ECxaCz0"><img src="GaziLibrary/wwwroot/image/ReadmeImages/books.PNG" alt=""></a>
 </div>
 
 ## Database Tables
